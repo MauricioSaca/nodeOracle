@@ -1,0 +1,76 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-12" style="margin-top: 5em;">
+        <p class="text-center">
+          <b>Formulario Departamentos</b>
+        </p>
+        <form id="departamentoForm" action="/departament/save" method="POST" class="form-horizontal" role="form">
+          <div class="form-group">
+            <label for="nombre" class="col-sm-2 control-label">Nombre</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" id="nombre" name="nombre">
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="abreviatura" class="col-sm-2 control-label">Abreviatura</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" id="abreviatura" name="abreviatura">
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">
+              <button type="submit" class="btn btn-default">Guardar</button>
+              <button type="reset" class="btn btn-default">Limpiar</button>
+            </div>
+          </div>
+        </form>
+      </div>
+  </div>
+  <div class="row" style="margin-top: 5em;">
+    <p class="text-center">
+      <b>Departamentos</b>
+    </p>
+    <div class="col-md-12">
+      <div class="table-responsive">
+        <table class="table">
+           <thead>
+            <tr>
+              <th>#</th>
+              <th>Nombre</th>
+              <th>Abreviatura</th>
+              <th>Accion</th>
+            </tr>
+          </thead>
+          <tbody>
+            {{#each data as |item index|}}
+              <tr>
+                {{#each item}}
+                  <td>{{this}}</td>
+                {{/each}}
+                <td>
+                    <p style="display: inline-block;width: 150px;margin: 10px;">
+                      <a href="/departament/edit/{{./ID}}">Editar</a>
+                    </p>
+                    <form method="POST" action="/departament/delete/{{./ID}}?_method=DELETE">
+                        <p style="display: inline-block;width: 150px;">
+                          <button type="submit" class="btn btn-link">Eliminar</button>
+                        </p>
+                    </form>
+                </td> 
+              </tr>
+            {{/each}}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+  {{#if errors}}
+    <div class="alert alert-danger" role="alert">
+      {{#each errors}}
+        <p>{{./msg}}</p>
+      {{/each}}
+    </div>
+  {{/if}}

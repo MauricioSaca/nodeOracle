@@ -1,0 +1,35 @@
+
+<!-- Page Content -->
+<div class="container">
+
+<div class="row">
+  <div class="col-lg-12 text-center">
+    <h1>NodeJs Javascript del lado del servidor</h1>
+    <p class="lead">
+
+        Un Javascript "sin restricciones"
+        Con NodeJS tenemos un "Javascript sin restricciones", 
+        ya que todo se ejecuta en el servidor y no tenemos que preocuparnos de si nuestro código será compatible
+        o no con distintos clientes. 
+        Todo lo que escribas en Node JS y te funcione en tu servidor, 
+        estarás seguro que funcionará bien, 
+        sea cual sea el sistema que se conecte, 
+        porque toda la ejecución de código del servidor se queda aislada en el servidor.
+    </p>
+    <p class="lead">
+        Programación Asíncrona
+        este es un concepto que algunas personas no consiguen entender a la primera y que ahora toma especial importancia, dado que NodeJS fue pensado desde el primer momento para potenciar los beneficios de la programación asíncrona.
+
+        Imaginemos que un programa tiene un fragmento de código que tarda cinco segundos en resolverse. En la mayoría de los lenguajes de programación precedentes, durante todo ese tiempo el hilo de ejecución se encuentra ocupado, esperando a que pasen esos cinco segundos, o los que sea, antes de continuar con las siguientes instrucciones. En la programación asíncrona eres capaz de liberar el proceso de modo que los recursos se quedan disponibles para hacer otras cosas durante el tiempo de espera.
+
+        Un ejemplo claro de esto es una llamada a un servicio web, o una consulta a la base de datos. Una vez realizada la solicitud generalmente pasará un tiempo hasta que se obtenga la respuesta. Ese tiempo, por corto que sea, dejaría un proceso esperando en la programación tradicional y en la asíncrona simplemente se libera. En NodeJS, o en Javascript en general, cuando esa espera ha terminado y se ha recibido la respuesta, se retomará la ejecución del código. Para definir las acciones a realizar (código a ejecutar) cuando se haya terminado esa espera, se especifica el código mediante funciones llamadas habitualmente "callbacks". Esas funciones contendrán las líneas de código que ejecutar al final de esos procesos de espera, y una vez se ha recibido la respuesta.
+
+        La filosofía detrás de Node.JS es hacer programas que no bloqueen la línea de ejecución de código con respecto a entradas y salidas, de modo que los ciclos de procesamiento se queden disponibles durante la espera. Por eso todas las APIs de NodeJS usan callbacks de manera intensiva para definir las acciones a ejecutar después de cada operación I/O, que se procesan cuando las entradas o salidas se han completado.
+
+    </p>
+    
+  </div>
+</div>
+<!-- /.row -->
+
+</div>
